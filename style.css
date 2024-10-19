@@ -497,8 +497,9 @@ nav .container {
 
 @media (max-width: 480px) {
     .Circle {
-        height: 150px;
-        width: 150px;
+        height: 180px;
+        width: 180px;
+        margin-left: 20px;
     }
 
     #about p {
