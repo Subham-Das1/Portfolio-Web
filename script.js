@@ -220,10 +220,17 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(heading);
 });
 
-
+// Refres in Device Less than 768px 
 window.addEventListener('scroll', function() {
     if (window.scrollY === 0) {
         window.location.reload();
     }
 });
 
+if (window.innerWidth <= 768) { 
+    window.addEventListener('scroll', function() {
+        if (window.scrollY === 0) {
+            window.location.reload();
+        }
+    });
+}
