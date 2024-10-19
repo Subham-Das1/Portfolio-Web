@@ -843,6 +843,9 @@ nav .container {
         opacity: 1;
         transform: none;
     }
+    #projects {
+        padding-left: 10px;
+    }
 }
 
 @media (max-width: 468px) {
