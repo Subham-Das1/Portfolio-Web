@@ -220,7 +220,6 @@ nav .container {
     #dark-mode-toggle {
         display: none;
     }
-
     .home-content{
         z-index: 0;
     }
@@ -249,7 +248,6 @@ nav .container {
     .container {
         padding: 1rem;
     }
-
     .home-content{
         z-index: 0;
     }
@@ -476,10 +474,10 @@ nav .container {
     }
 
     .Circle {
-        height: 200px;
-        width: 200px;
+        height: 220px;
+        width: 220px;
         margin-right: 0;
-        margin-bottom: 2rem;
+        margin-left: 20px;
     }
 
     #about p {
@@ -703,6 +701,7 @@ nav .container {
 #projects{
     height: 100vh;
     overflow-x: hidden;
+    padding-left: 40px;
 }
 
 .content-section {
@@ -848,6 +847,7 @@ nav .container {
     }
     #projects {
         padding-left: 10px;
+        justify-content: center;
     }
 }
 
@@ -861,6 +861,7 @@ nav .container {
         opacity: 1;
         transform: none;
     }
+
     #projects {
         padding-left: 10px;
     }
@@ -1003,9 +1004,6 @@ textarea::placeholder {
     border-image-slice: 1;
 }
 
-form {
-    margin-bottom: 20px; 
-}
 
 @media (max-width: 1090px) {
     .contact-content {
