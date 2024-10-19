@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Changer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+        }
+        
+        .carousel-container {
+            width: 80%;
+            max-width: 600px;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .carousel-container img {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
+        }
+        </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <img id="carouselImage" src="" alt="Slideshow Image">
+    </div>
+
+    <script>
+        const images = [
+            '', 
+            '', 
+            '', 
+            '', 
+            '', 
+            ''
+        ];
+
+        let currentImageIndex = 0;
+
+        const carouselImage = document.getElementById('carouselImage');
+
+        function changeImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            
+            carouselImage.src = images[currentImageIndex];
+        }
+
+        setInterval(changeImage, 3000);
+
+    </script>
+</body>
+</html>
