@@ -219,6 +219,10 @@ nav .container {
     #dark-mode-toggle {
         display: none;
     }
+
+    .home-content{
+        z-index: 0;
+    }
 }
 
 @media (max-width: 480px) {
@@ -242,6 +246,10 @@ nav .container {
 
     .container {
         padding: 1rem;
+    }
+
+    .home-content{
+        z-index: 0;
     }
 }
 
