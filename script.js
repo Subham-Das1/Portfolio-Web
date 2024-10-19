@@ -220,3 +220,10 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(heading);
 });
 
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY === 0) {
+        window.location.reload();
+    }
+});
+
