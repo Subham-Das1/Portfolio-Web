@@ -221,16 +221,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Refres in Device Less than 768px 
-window.addEventListener('scroll', function() {
-    if (window.scrollY === 0) {
-        window.location.reload();
-    }
-});
+let startY = 0;
+let endY = 0;
+const refreshThreshold = 100; 
 
-if (window.innerWidth <= 768) { 
-    window.addEventListener('scroll', function() {
-        if (window.scrollY === 0) {
-            window.location.reload();
-        }
-    });
-}
+window.addEventListener('touchstart', function(e) {
+    if (window.scrollY === 0) {
+        startY = e.touches[0].pageY;
+    }
+}, { passive: true });
+
+window.addEventListener('touchmove', function(e) {
+    if (window.scrollY === 0) {
+        endY = e.touches[0].pageY;
+    }
+}, { passive: true });
+
+window.addEventListener('touchend', function() {
+    if (window.scrollY === 0 && endY - startY > refreshThreshold) {
+        location.reload();  
+    }
+}, { passive: true });
