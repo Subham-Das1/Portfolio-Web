@@ -222,23 +222,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Refres in Device Less than 768px 
 let startY = 0;
-let endY = 0;
-const refreshThreshold = 30; 
+let isPullingDown = false;
+const refreshThreshold = 100; 
 
 window.addEventListener('touchstart', function(e) {
     if (window.scrollY === 0) {
         startY = e.touches[0].pageY;
+        isPullingDown = true; 
     }
 }, { passive: true });
 
 window.addEventListener('touchmove', function(e) {
-    if (window.scrollY === 0) {
-        endY = e.touches[0].pageY;
+    if (isPullingDown) {
+        let currentY = e.touches[0].pageY;
+        if (currentY > startY) {
+            let distancePulled = currentY - startY;
+            if (distancePulled > refreshThreshold) {
+                location.reload();  
+                isPullingDown = false; 
+            }
+        } else {
+            isPullingDown = false;
+        }
     }
 }, { passive: true });
 
 window.addEventListener('touchend', function() {
-    if (window.scrollY === 0 && endY - startY > refreshThreshold) {
-        location.reload();  
+    isPullingDown = false;
+}, { passive: true });
+d();  
     }
 }, { passive: true });
