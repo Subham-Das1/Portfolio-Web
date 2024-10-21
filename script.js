@@ -220,10 +220,11 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(heading);
 });
 
-// Refres in Device Less than 768px 
+// Refresh in Device Less than 768px 
 let startY = 0;
 let isPullingDown = false;
-const refreshThreshold = 100; 
+const refreshThreshold = 150; 
+const pullResistance = 1.5;
 
 window.addEventListener('touchstart', function(e) {
     if (window.scrollY === 0) {
@@ -236,9 +237,9 @@ window.addEventListener('touchmove', function(e) {
     if (isPullingDown) {
         let currentY = e.touches[0].pageY;
         if (currentY > startY) {
-            let distancePulled = currentY - startY;
+            let distancePulled = (currentY - startY) / pullResistance; 
             if (distancePulled > refreshThreshold) {
-                location.reload();  
+                location.reload(); 
                 isPullingDown = false; 
             }
         } else {
@@ -249,7 +250,4 @@ window.addEventListener('touchmove', function(e) {
 
 window.addEventListener('touchend', function() {
     isPullingDown = false;
-}, { passive: true });
-d();  
-    }
 }, { passive: true });
