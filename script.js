@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Refres in Device Less than 768px 
 let startY = 0;
 let endY = 0;
-const refreshThreshold = 100; 
+const refreshThreshold = 30; 
 
 window.addEventListener('touchstart', function(e) {
     if (window.scrollY === 0) {
