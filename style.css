@@ -251,6 +251,10 @@ nav .container {
     .home-content{
         z-index: 0;
     }
+
+    .home-content footer{
+        display:none;
+    }
 }
 
 @media (max-width: 1107px) {
