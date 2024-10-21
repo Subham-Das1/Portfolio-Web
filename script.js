@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
 let startY = 0;
 let isPullingDown = false;
 const refreshThreshold = 150; 
-const pullResistance = 1.5;
+const pullResistance = 2.5;
 
 window.addEventListener('touchstart', function(e) {
     if (window.scrollY === 0) {
