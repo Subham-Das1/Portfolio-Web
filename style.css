@@ -252,7 +252,7 @@ nav .container {
         z-index: 0;
     }
 
-    .home-content footer{
+    #home footer{
         display:none;
     }
 }
