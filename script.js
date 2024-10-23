@@ -101,13 +101,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
 document.addEventListener('click', function (e) {
-    if (!mobileMenu.classList.contains('hidden')) {
-        if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
-            mobileMenu.classList.add('hidden');
-        }
+    if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
+        hideMobileMenu();
     }
 });
+
+const resetAutoCloseTimer = () => {
+    clearTimeout(autoCloseTimer);
+
+    autoCloseTimer = setTimeout(hideMobileMenu, 3000);
+};
+
+document.addEventListener('DOMContentLoaded', resetAutoCloseTimer);
 
 
 //Section Loader 
