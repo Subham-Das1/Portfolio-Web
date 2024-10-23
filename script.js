@@ -73,12 +73,30 @@ document.addEventListener("DOMContentLoaded", function() {
     // Mobile menu functionality
     const mobileMenuButton = document.getElementById("mobile-menu-button");
     const mobileMenu = document.getElementById("mobile-menu");
+    let autoCloseTimer;
 
-    mobileMenuButton.addEventListener("click", () => {
+    const hideMobileMenu = () => {
+        if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+        }
+    };
+
+    mobileMenuButton.addEventListener("click", (e) => {
+        e.stopPropagation();  
         mobileMenu.classList.toggle("hidden");
+
+        if (!mobileMenu.classList.contains('hidden')) {
+            startAutoCloseTimer();
+        } else {
+            clearTimeout(autoCloseTimer); 
+        }
     });
 
-    // Hide mobile menu and show section on navigation item click
+    const startAutoCloseTimer = () => {
+        clearTimeout(autoCloseTimer); 
+        autoCloseTimer = setTimeout(hideMobileMenu, 5000);  
+    };
+
     const navButtons = document.querySelectorAll('.nav-btn');
     const sections = document.querySelectorAll('.section');
 
@@ -87,34 +105,23 @@ document.addEventListener("DOMContentLoaded", function() {
             e.preventDefault();
             const sectionId = btn.getAttribute('data-section');
             
-            // Hide all sections
             sections.forEach(section => section.classList.add('hidden'));
 
-            // Show the active section
             document.getElementById(sectionId).classList.remove('hidden');
 
-            // Hide mobile menu if it's visible
-            if (!mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-            }
+            hideMobileMenu();
         });
+
+        btn.addEventListener('mouseenter', () => clearTimeout(autoCloseTimer)); 
+        btn.addEventListener('mouseleave', startAutoCloseTimer);  
+        btn.addEventListener('click', () => clearTimeout(autoCloseTimer));  
     });
-});
 
-
-document.addEventListener('click', function (e) {
-    if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
-        hideMobileMenu();
-    }
-});
-
-const resetAutoCloseTimer = () => {
-    clearTimeout(autoCloseTimer);
-
-    autoCloseTimer = setTimeout(hideMobileMenu, 3000);
-};
-
-document.addEventListener('DOMContentLoaded', resetAutoCloseTimer);
+    document.addEventListener('click', function(e) {
+        if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
+            hideMobileMenu();  
+        }
+    });
 
 
 //Section Loader 
@@ -239,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
 let startY = 0;
 let isPullingDown = false;
 const refreshThreshold = 150; 
-const pullResistance = 2.5;
+const pullResistance = 1.5;
 
 window.addEventListener('touchstart', function(e) {
     if (window.scrollY === 0) {
