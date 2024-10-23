@@ -7,6 +7,7 @@ Welcome to my portfolio website! This project showcases my skills, projects, and
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Usage](#usage)
+- [Contribution](#contribution)
 
 ## Features
 
@@ -27,8 +28,13 @@ Welcome to my portfolio website! This project showcases my skills, projects, and
 You can explore the website by navigating through the different sections, which include:
 
 About Me: A brief introduction and background.
+
 Skills: A list of my technical skills.
+
 Projects: A showcase of my projects with descriptions.
+
 Contact: A form to get in touch with me.
-Contributing
+
+
+## Contribution
 Contributions are welcome! If you'd like to contribute to this project, feel free to contact me 
