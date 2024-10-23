@@ -101,6 +101,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener('click', function (e) {
+    if (!mobileMenu.classList.contains('hidden')) {
+        if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
+            mobileMenu.classList.add('hidden');
+        }
+    }
+});
+
 
 //Section Loader 
 document.addEventListener('DOMContentLoaded', function() {
