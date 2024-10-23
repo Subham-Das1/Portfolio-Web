@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (entry.target.classList.contains('animated-description-1')) {
                     setTimeout(() => {
                         entry.target.classList.add('visible-description-1');
-                    }, 2000)
+                    }, 1000)
                 } else if (entry.target.classList.contains('animated-description-2')) {
                         entry.target.classList.add('visible-description-2'); 
                 } else if (entry.target.classList.contains('animated-heading')) {
