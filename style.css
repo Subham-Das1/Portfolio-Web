@@ -275,6 +275,7 @@ nav .container {
     opacity: 0; 
     transform: translateX(100%); 
     animation: slideIn 1.5s ease-out forwards;
+    font-family: Lexend Deca;
 }
 
 .home-content h1 {
@@ -429,6 +430,17 @@ nav .container {
 #about{
     height: 100vh;
     overflow-x: hidden;
+}
+
+.lexend-deca{
+    font-family: "Lexend Deca", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+  }
+
+.about-content{
+    font-family: Lexend Deca;
+    font-style: italic;
 }
 
 .Circle {
@@ -630,7 +642,10 @@ nav .container {
     width: 100%;
     margin-top: 25px;
     padding-left: 10px;
+    font-family: Lexend Deca;
+    font-style: italic;
 }
+
 
 .box1 {
     width: 20%;
@@ -758,6 +773,8 @@ nav .container {
 .content-section {
     display: flex;
     flex-direction: column;
+    font-family: Lexend Deca;
+    font-style: italic;
 }
 
 .content {
@@ -792,7 +809,7 @@ nav .container {
 .description {
     margin-top: 0;
     font-size: 1em; 
-    line-height: 1.5; 
+    line-height: 1.5;
 }
 
 .button {
@@ -939,10 +956,12 @@ nav .container {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    max-width: 800px;
+    max-width: 850px;
     margin-left: 18rem;
     padding: 0 2rem; 
     text-align: center;
+    font-family: Lexend Deca;
+    font-style: italic;
 }
 
 .footer{
